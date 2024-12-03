@@ -9,4 +9,10 @@ class Feedback extends Model
 {
     /** @use HasFactory<\Database\Factories\FeedbackFactory> */
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'comment',
+        'img',
+        'rate',
+    ];
 }

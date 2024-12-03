@@ -9,4 +9,10 @@ class HistoryCards extends Model
 {
     /** @use HasFactory<\Database\Factories\HistoryCardsFactory> */
     use HasFactory;
+    protected $fillable = [
+        "year",
+        "brief",
+        "logo",
+        "url",
+    ];
 }

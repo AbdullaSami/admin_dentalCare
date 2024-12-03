@@ -9,4 +9,10 @@ class CompaniesCards extends Model
 {
     /** @use HasFactory<\Database\Factories\CompaniesCardsFactory> */
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'since_date',
+        'img',
+        'products',
+    ];
 }

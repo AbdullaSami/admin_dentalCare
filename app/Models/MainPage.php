@@ -9,4 +9,10 @@ class MainPage extends Model
 {
     /** @use HasFactory<\Database\Factories\MainPageFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'text',
+        'img',
+        'url',
+    ];
 }
