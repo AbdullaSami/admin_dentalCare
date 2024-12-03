@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('companies_cards', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('since_date');
+            $table->string('img');
+            $table->text('products');
             $table->timestamps();
         });
     }

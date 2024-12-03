@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('history_cards', function (Blueprint $table) {
             $table->id();
+            $table->string('year');
+            $table->text('brief');
+            $table->string('logo');
+            $table->string('url');
             $table->timestamps();
         });
     }

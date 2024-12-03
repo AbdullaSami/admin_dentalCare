@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('main_pages', function (Blueprint $table) {
             $table->id();
+            $table->string('text');
+            $table->string('img');
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
