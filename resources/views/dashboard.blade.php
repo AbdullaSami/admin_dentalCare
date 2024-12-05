@@ -8,6 +8,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <a href="{{route('main-page.create')}}">new offer</a>
+            <a href="{{route('event.create')}}">new event</a>
+            <a href="{{route('timeline.create')}}">new Card</a>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{-- Offers Table --}}
@@ -34,13 +36,13 @@
                                 @foreach ($mainPage as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img src="{{$item->img}}" alt="{{$item->img}}">
+                                            <img  class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <td class="px-6 py-4">
                                             {{$item->text}}
                                         </td>
                                         <td class="px-6 py-4">
-                                            <a class="text-blue-400" href="{{$item->url}}">{{$item->url}}</a>
+                                            <a class="text-blue-400" href="{{$item->url}}">Test Link</a>
                                         </td>
                                         <td class="px-4 py-2 space-x-2 flex justify-start">
                                             <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('main-page.edit', $item->id) }}">
@@ -82,7 +84,7 @@
                                 @foreach ($events as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img src="{{$item->img}}" alt="{{$item->img}}">
+                                            <img class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <td class="px-6 py-4">
                                             {{$item->title}}
@@ -91,10 +93,10 @@
                                             <a class="text-blue-400" href="{{$item->url}}">{{$item->url}}</a>
                                         </td>
                                         <td class="px-4 py-2 space-x-2 flex justify-start">
-                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('main-page.edit', $item->id) }}">
+                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('event.edit', $item->id) }}">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('main-page.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('event.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md text-sm">Cancel</button>
@@ -130,7 +132,7 @@
                                 @foreach ($timeline as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img src="{{$item->logo}}" alt="{{$item->logo}}">
+                                            <img class="h-20" src="{{$item->logo}}" alt="{{$item->logo}}">
                                         </th>
                                         <td class="px-6 py-4 overflow-hidden truncate hover:max-h-screen hover:overflow-visible hover:whitespace-normal transition-all duration-300 ease-in-out">
                                             {{$item->year}} <br>
@@ -140,10 +142,10 @@
                                             <a class="text-blue-400" href="{{$item->url}}">{{$item->url}}</a>
                                         </td>
                                         <td class="px-4 py-2 space-x-2 flex justify-start">
-                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('main-page.edit', $item->id) }}">
+                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('timeline.edit', $item->id) }}">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('main-page.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('timeline.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md text-sm">Cancel</button>
@@ -182,7 +184,7 @@
                                 @foreach ($feedbacks as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            <img src="{{$item->img}}" alt="{{$item->img}}">
+                                            <img class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <th class="px-6 py-4">
                                             {{$item->name}}
