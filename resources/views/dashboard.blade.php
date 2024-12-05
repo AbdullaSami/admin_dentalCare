@@ -10,6 +10,7 @@
             <a href="{{route('main-page.create')}}">new offer</a>
             <a href="{{route('event.create')}}">new event</a>
             <a href="{{route('timeline.create')}}">new Card</a>
+            <a href="{{route('feedback.create')}}">new Feedback</a>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{-- Offers Table --}}
@@ -196,10 +197,10 @@
                                             {{$item->rate}}/5
                                         </td>
                                         <td class="px-4 py-2 space-x-2 flex justify-start">
-                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('main-page.edit', $item->id) }}">
+                                            <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('feedback.edit', $item->id) }}">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('main-page.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('feedback.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md text-sm">Cancel</button>
