@@ -7,10 +7,33 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{route('main-page.create')}}">new offer</a>
-            <a href="{{route('event.create')}}">new event</a>
-            <a href="{{route('timeline.create')}}">new Card</a>
-            <a href="{{route('feedback.create')}}">new Feedback</a>
+            {{-- Create new buttons --}}
+            <div class="m-4 flex justify-center items-center space-x-4">
+                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('main-page.create')}}">
+                        new offer
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+                <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
+                    </a>
+                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('event.create')}}">
+                        new event
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+                <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
+                    </a>
+                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('timeline.create')}} ">
+                        new Card
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+                <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
+                    </a>
+                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('feedback.create')}} ">
+                        new Feedback
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+                <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+            </svg>
+                    </a>
+            </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{-- Offers Table --}}
