@@ -13,7 +13,15 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+        $perPages = request('perPage',10);
+        $search = request('search','');
+        $sortField = request('sort_field', 'created_at');
+        $sortDirection = request('sort_direction', 'desc');
+        $doctors = Registration::query()
+        ->where('name','like', "%{$search}%")
+        ->paginate($perPages);
+
+        return view("registeredDoctors", compact("doctors"));
     }
 
     /**

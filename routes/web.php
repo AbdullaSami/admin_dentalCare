@@ -5,6 +5,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HistoryCardsController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +17,7 @@ Route::resource('/main-page', MainPageController::class)->middleware(['auth', 'v
 Route::resource('/event', EventsController::class)->middleware(['auth', 'verified'])->names('event');
 Route::resource('/timeline', HistoryCardsController::class)->middleware(['auth', 'verified'])->names('timeline');
 Route::resource('/feedback', FeedbackController::class)->middleware(['auth', 'verified'])->names('feedback');
+Route::resource('/registered-doctors', RegistrationController::class)->middleware(['auth', 'verified'])->names('registered-doctors');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
