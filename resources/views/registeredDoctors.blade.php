@@ -39,6 +39,8 @@
                                 <th scope="col" class="px-2 py-3">#</th>
                                 <th scope="col" class="px-6 py-3">Name</th>
                                 <th scope="col" class="px-6 py-3">Email</th>
+                                <th scope="col" class="px-6 py-3">Phone number</th>
+                                <th scope="col" class="px-6 py-3">WhatsApp</th>
                                 <th scope="col" class="px-6 py-3">Actions</th>
                             </tr>
                         </thead>
@@ -50,6 +52,13 @@
                                     <td class="px-2 py-4"><?= $counter ?></td>
                                     <td class="px-6 py-4">{{ $doctor->name }}</td>
                                     <td class="px-6 py-4">{{ $doctor->email }}</td>
+                                    <td class="px-6 py-4 text-blue-500">
+                                        <a href="tel:{{ $doctor->phone_number }}">{{ $doctor->phone_number }}</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-green-700">
+                                        <a href="https://wa.me/{{ urlencode('+20' . $doctor->whatsapp_number) }}" target="_blank">{{ $doctor->whatsapp_number }}</a>
+
+                                    </td>
                                     <td class="flex px-6 py-4">
                                         <a href="{{route('registered-doctors.edit',$doctor->id)}}"
                                         class="pr-4 hover:text-blue-700 transition-transform duration-300 ease-in-out hover:scale-110">
