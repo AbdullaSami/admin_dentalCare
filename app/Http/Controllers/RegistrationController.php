@@ -15,13 +15,14 @@ class RegistrationController extends Controller
     {
         $perPages = request('perPage',10);
         $search = request('search','');
-        $sortField = request('sort_field', 'created_at');
+        $sortField = request('sort_field', 'id');
         $sortDirection = request('sort_direction', 'desc');
         $doctors = Registration::query()
         ->where('name','like', "%{$search}%")
+        ->orderBy($sortField, $sortDirection)
         ->paginate($perPages);
 
-        return view("registeredDoctors", compact("doctors"));
+        return view("registrations.registrations_table", compact("doctors"));
     }
 
     /**
@@ -29,7 +30,7 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        //
+        return view("registrations.registrations_create");
     }
 
     /**
@@ -37,7 +38,11 @@ class RegistrationController extends Controller
      */
     public function store(StoreRegistrationRequest $request)
     {
-        //
+        $doctor = new Registration;
+        $doctor->fill($request->all());
+        $doctor->save();
+        return redirect()->back()->with("success","");
+
     }
 
     /**
@@ -51,17 +56,21 @@ class RegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Registration $registration)
+    public function edit($id)
     {
-        //
+        $registration = Registration::findOrFail($id);
+        return view("registrations.registrations_edit", compact("registration"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRegistrationRequest $request, Registration $registration)
+    public function update(UpdateRegistrationRequest $request, $id)
     {
-        //
+        $doctor = Registration::findOrFail($id);
+        $doctor->fill($request->all());
+        $doctor->save();
+        return redirect()->route("registered-doctors.index")->with("success","");
     }
 
     /**
