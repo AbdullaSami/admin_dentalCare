@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('registered-doctors.index')" :active="request()->routeIs('registered-doctors.index')">
                         {{ __('Doctors') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('feedback.index')" :active="request()->routeIs('feedback.index')">
+                        {{ __('Doctors Feedbacks') }}
+                    </x-nav-link>
                 </div>
             </div>
 

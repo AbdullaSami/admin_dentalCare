@@ -17,7 +17,16 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $perPages = request('perPage',10);
+        $search = request('search','');
+        $sortField = request('sort_field', 'id');
+        $sortDirection = request('sort_direction', 'desc');
+        $feedbacks = Feedback::query()
+        ->where('name','like', "%{$search}%")
+        ->orderBy($sortField, $sortDirection)
+        ->paginate($perPages);
+
+        return view("feedbacks.feedback_table", compact("feedbacks"));
     }
 
     /**
@@ -145,6 +154,6 @@ class FeedbackController extends Controller
     public function destroy(Feedback $feedback)
     {
         $feedback->delete();
-        return redirect('dashboard')->with('success', 'feedback deleted successfully!');
+        return redirect('feedback')->with('success', 'feedback deleted successfully!');
     }
 }
