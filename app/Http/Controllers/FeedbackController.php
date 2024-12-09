@@ -27,6 +27,10 @@ class FeedbackController extends Controller
     {
         return view("feedbacks.feedback_create");
     }
+    public function shareFeedback()
+    {
+        return view("feedbacks.feedback_share");
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -54,7 +58,30 @@ class FeedbackController extends Controller
         return redirect()->back()->withErrors(['error' => 'Failed to create feedback: ' . $e->getMessage()]);
     }
     }
+    public function feedback(StoreFeedbackRequest $request)
+    {
+        // Validate the request data
+    $data = $request->all();
 
+    // Handle image upload (if applicable)
+    if ($request->hasFile('img')) {
+        $image = $request->file('img');
+        $filename = time() . '_' . $image->getClientOriginalName();
+        $relativePath = $image->storeAs('public/feedback_images', $filename);
+        $data['img'] = URL::to(Storage::url($relativePath));
+
+    }
+
+    // Create the feedback
+    try {
+        $feedback = Feedback::create($data);
+        return redirect()->route('success')->with('success', 'feedback created successfully!');
+    } catch (\Exception $e) {
+        dd($e);
+        // Handle exceptions and provide informative error messages
+        return redirect()->back()->withErrors(['error' => 'Failed to create feedback: ' . $e->getMessage()]);
+    }
+    }
     /**
      * Display the specified resource.
      */

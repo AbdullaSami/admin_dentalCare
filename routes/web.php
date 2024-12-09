@@ -17,6 +17,11 @@ Route::resource('/main-page', MainPageController::class)->middleware(['auth', 'v
 Route::resource('/event', EventsController::class)->middleware(['auth', 'verified'])->names('event');
 Route::resource('/timeline', HistoryCardsController::class)->middleware(['auth', 'verified'])->names('timeline');
 Route::resource('/feedback', FeedbackController::class)->middleware(['auth', 'verified'])->names('feedback');
+Route::get('/feedback-new', [FeedbackController::class, 'shareFeedback']);
+Route::get('/feedback-success', function(){
+    return view('feedbacks.feedback_success');
+})->name('success');
+Route::post('/feedback-store', [FeedbackController::class, 'feedback'])->name('feedback.share');
 Route::resource('/registered-doctors', RegistrationController::class)->middleware(['auth', 'verified'])->names('registered-doctors');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
