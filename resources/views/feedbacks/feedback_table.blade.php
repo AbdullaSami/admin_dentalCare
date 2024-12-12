@@ -66,6 +66,12 @@
                                             <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('feedback.edit', $item->id) }}">
                                                 Edit
                                             </a>
+                                            <form action="{{ route('feedback.update', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <input type="hidden" name="is_published" id="is_published" value="1">
+                                                <button type="submit" class="bg-green-400 hover:bg-green-500 text-white px-3 py-1 rounded-md text-sm">Publish</button>
+                                            </form>
                                             <form action="{{ route('feedback.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

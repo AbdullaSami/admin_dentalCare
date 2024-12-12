@@ -14,5 +14,6 @@ class Feedback extends Model
         'comment',
         'img',
         'rate',
+        'is_published',
     ];
 }

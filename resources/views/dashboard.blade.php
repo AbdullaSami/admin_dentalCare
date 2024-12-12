@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Create new buttons --}}
-            <div class="m-4 flex justify-center items-center space-x-4">
+        <div class="m-4 flex justify-center items-center space-x-4">
                     <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('main-page.create')}}">
                         new offer
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
@@ -33,7 +33,7 @@
                 <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
             </svg>
                     </a>
-            </div>
+        </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{-- Offers Table --}}
@@ -223,10 +223,11 @@
                                             <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('feedback.edit', $item->id) }}">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('feedback.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('feedback.update', $item->id) }}" method="POST">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md text-sm">Cancel</button>
+                                                @method('Put')
+                                                <input type="hidden" name="is_published" id="is_published" value="0">
+                                                <button type="submit" class="bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md text-sm">Unpublish</button>
                                             </form>
                                         </td>
                                     </tr>

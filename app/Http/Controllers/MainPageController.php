@@ -24,7 +24,7 @@ class MainPageController extends Controller
         $mainPage = MainPage::all();
         $events = Events::all();
         $timeline = HistoryCards::all();
-        $feedbacks = Feedback::all();
+        $feedbacks = Feedback::where('is_published', true)->get();
 
         return view("dashboard", compact("mainPage","events","timeline","feedbacks"));
     }
