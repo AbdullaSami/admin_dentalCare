@@ -55,6 +55,7 @@
                         <div>
                           <label for="img" class="block text-sm font-medium text-gray-700">Upload Image</label>
                           <input
+                          required
                             type="file"
                             name="img"
                             id="img"
