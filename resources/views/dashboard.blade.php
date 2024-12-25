@@ -114,7 +114,7 @@
                                             {{$item->title}}
                                         </td>
                                         <td class="px-6 py-4">
-                                            <a class="text-blue-400" href="{{$item->url}}">{{$item->url}}</a>
+                                            <a class="text-blue-400" href="{{$item->url}}" target="_blank">{{$item->url}}</a>
                                         </td>
                                         <td class="px-4 py-2 space-x-2 flex justify-start">
                                             <a  class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded-md text-sm" href="{{ route('event.edit', $item->id) }}">
