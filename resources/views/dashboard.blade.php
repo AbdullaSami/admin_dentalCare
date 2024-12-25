@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Create new buttons --}}
-        <div class="m-4 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <div class="m-4 flex flex-col md:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a class="h-10 w-full sm:w-auto flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('main-page.create')}}">
             new offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
