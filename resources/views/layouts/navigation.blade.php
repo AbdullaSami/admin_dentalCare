@@ -76,6 +76,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('registered-doctors.index')" :active="request()->routeIs('registered-doctors.index')">
+                {{ __('Doctors') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('feedback.index')" :active="request()->routeIs('feedback.index')">
+                {{ __('Doctors Feedbacks') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

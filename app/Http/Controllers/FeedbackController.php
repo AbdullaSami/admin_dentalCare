@@ -144,7 +144,7 @@ class FeedbackController extends Controller
             $feedback->update($data);
         }
 
-        return redirect('dashboard')->with('success', 'feedback Updated successfully!');
+        return redirect()->back()->with('success', 'feedback Updated successfully!');
 
     }
 

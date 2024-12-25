@@ -8,31 +8,31 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Create new buttons --}}
-        <div class="m-4 flex justify-center items-center space-x-4">
-                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('main-page.create')}}">
-                        new offer
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+        <div class="m-4 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a class="h-10 w-full sm:w-auto flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('main-page.create')}}">
+            new offer
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
                 <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
             </svg>
-                    </a>
-                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('event.create')}}">
-                        new event
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+            </a>
+            <a class="h-10 w-full sm:w-auto flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('event.create')}}">
+            new event
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
                 <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
             </svg>
-                    </a>
-                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('timeline.create')}} ">
-                        new Card
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+            </a>
+            <a class="h-10 w-full sm:w-auto flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('timeline.create')}}">
+            new Card
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
                 <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
             </svg>
-                    </a>
-                    <a class="h-10 w-full flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('feedback.create')}} ">
-                        new Feedback
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
+            </a>
+            <a class="h-10 w-full sm:w-auto flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-blue-100 hover:text-white transition px-4 py-2 rounded-xl" href="{{route('feedback.create')}}">
+            new Feedback
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" fill="currentColor" class="ml-2 w-4 h-4">
                 <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
             </svg>
-                    </a>
+            </a>
         </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -59,7 +59,7 @@
                             <tbody>
                                 @foreach ($mainPage as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <th scope="row" class="px-0 md:px-6  py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             <img  class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <td class="px-6 py-4">
@@ -107,7 +107,7 @@
                             <tbody>
                                 @foreach ($events as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <th scope="row" class="px-0 md:px-6  py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             <img class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <td class="px-6 py-4">
@@ -155,7 +155,7 @@
                             <tbody>
                                 @foreach ($timeline as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <th scope="row" class="px-0 md:px-6  py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             <img class="h-20" src="{{$item->logo}}" alt="{{$item->logo}}">
                                         </th>
                                         <td class="px-6 py-4 overflow-hidden truncate hover:max-h-screen hover:overflow-visible hover:whitespace-normal transition-all duration-300 ease-in-out">
@@ -207,7 +207,7 @@
                             <tbody>
                                 @foreach ($feedbacks as $item )
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <th scope="row" class="px-0 md:px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             <img class="h-20" src="{{$item->img}}" alt="{{$item->img}}">
                                         </th>
                                         <th class="px-6 py-4">
